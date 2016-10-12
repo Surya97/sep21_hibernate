@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="inh.Cricketer" table="ALLCRICKETERS">
+    <id column="CID" name="cid" type="int">
+      <generator class="assigned"/>
+    </id>
+    <discriminator column="PTYPE" length="10" type="string"/>
+    <property length="20" name="name"/>
+    <property length="20" name="country"/>
+    <subclass discriminator-value="batsman" name="inh.Batsman">
+      <property name="noruns"/>
+    </subclass>
+    <subclass discriminator-value="bowler" name="inh.Bowler">
+      <property name="nowickets"/>
+    </subclass>
+  </class>
+</hibernate-mapping>
