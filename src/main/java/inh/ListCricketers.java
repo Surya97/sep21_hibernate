@@ -8,17 +8,17 @@ import org.hibernate.cfg.Configuration;
 public class ListCricketers {
     public static void main(String[] args) {
         Configuration c = new Configuration();
-        c.addResource("inh/tableperclasshierarchy.hbm.xml");
-        //c.addResource("inh/tablepersubclass.hbm.xml");
-        // c.addResource("inh/tableperconcreteclass.hbm.xml");
+        // c.addResource("inh/tableperclasshierarchy.hbm.xml");
+        // c.addResource("inh/tablepersubclass.hbm.xml");
+        c.addResource("inh/tableperconcreteclass.hbm.xml");
         SessionFactory sf = c.configure().buildSessionFactory();
         Session session = sf.openSession();
        
-        List<Cricketer> list =(List<Cricketer>) session.createQuery("from Cricketer").list();
-        
-        for(Cricketer crkter : list) {
-        	System.out.println(crkter); // toString() 
-        }
+//        List<Cricketer> list =(List<Cricketer>) session.createQuery("from Cricketer").list();
+//        
+//        for(Cricketer crkter : list) {
+//        	System.out.println(crkter); // toString() 
+//        }
         
         
         List<Batsman> blist =(List<Batsman>) session.createQuery("from Batsman").list();

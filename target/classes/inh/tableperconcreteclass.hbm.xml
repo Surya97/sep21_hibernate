@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class abstract="true" name="inh.Cricketer" table="ONLYCRICKETER">
+  <class abstract="true" name="inh.Cricketer">
     <id column="CID" name="cid" type="int">
       <generator class="native"/>
     </id>
     <property length="20" name="name"/>
     <property length="20" name="country"/>
-    <union-subclass name="inh.Batsman" table="ONLYBATSMAN">
+    <union-subclass name="inh.Batsman" table="ONLYBATSMEN">
       <property column="noruns" name="noruns"/>
     </union-subclass>
-    <union-subclass name="inh.Bowler" table="ONLYBOWLER">
+    <union-subclass name="inh.Bowler" table="ONLYBOWLERS">
       <property column="nowickets" name="nowickets"/>
     </union-subclass>
   </class>

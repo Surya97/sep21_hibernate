@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
-  <class name="inh.Cricketer" table="CRICKETER">
+<hibernate-mapping> 
+  <class name="inh.Cricketer" table="CRICKETERS">
     <id column="CID" name="cid" type="int">
       <generator class="native"/>
     </id>
     <property length="20" name="name"/>
     <property length="20" name="country"/>
-    <joined-subclass name="inh.Bowler" table="Bowler">
+    <joined-subclass name="inh.Bowler" table="Bowlers">
       <key column="cid"/>
       <property name="nowickets"/>
     </joined-subclass>
-    <joined-subclass name="inh.Batsman" table="Batsman">
+    <joined-subclass name="inh.Batsman" table="Batsmen">
       <key column="cid"/>
       <property name="noruns"/>
     </joined-subclass>

@@ -6,14 +6,14 @@ import org.hibernate.cfg.Configuration;
 public class CricketersManager {
     public static void main(String[] args) {
         Configuration c = new Configuration();
-        c.addResource("inh/tableperclasshierarchy.hbm.xml");
+        // c.addResource("inh/tableperclasshierarchy.hbm.xml");
         //c.addResource("inh/tablepersubclass.hbm.xml");
-        // c.addResource("inh/tableperconcreteclass.hbm.xml");
+        c.addResource("inh/tableperconcreteclass.hbm.xml");
         SessionFactory sf = c.configure().buildSessionFactory();
         Session session = sf.openSession();
         session.beginTransaction();
         
-        Batsman bat = new Batsman();
+        Batsman bat = new Batsman(); 
         bat.setCid(1);
         bat.setName("Virat Kohli");
         bat.setCountry("India");
