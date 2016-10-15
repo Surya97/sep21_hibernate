@@ -18,22 +18,22 @@ public class NativeQueries {
       Session session = c.buildSessionFactory().openSession();
 
       List result = session.createSQLQuery("select * from subjects").list();
-      printQueryResult(result);
-
-      result = session.createSQLQuery("select * from subjects").addEntity(Subject.class).list();
-      printQueryResult(result);
+//      printQueryResult(result);
+//
+//      result = session.createSQLQuery("select * from subjects").addEntity(Subject.class).list();
+//      printQueryResult(result);
 
       result = session.createSQLQuery("select * from titles").
                addScalar("TITLEID", INTEGER).
                addScalar("TITLE",STRING).list();
 
       printQueryResult(result);
+//
+//      Query qry = session.createSQLQuery("select * from titles where title like ?");
+//      qry.setString(0,"Hi%");
 
-      Query qry = session.createSQLQuery("select * from titles where title like ?");
-      qry.setString(0,"Hi%");
-
-      result = qry.list();
-      printQueryResult(result);
+//      result = qry.list();
+//      printQueryResult(result);
 
    }
    public static void printQueryResult(List result) {

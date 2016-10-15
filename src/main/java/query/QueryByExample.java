@@ -35,9 +35,6 @@ public class QueryByExample {
       result = session.createCriteria(Title.class).add(titleex).list();
       printList(result);
 
-
-     
-
     } // main
     
     public static void printList(List result){
